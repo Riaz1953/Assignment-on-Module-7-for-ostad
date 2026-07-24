@@ -1,9 +1,11 @@
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
+const dotenv = require("dotenv");
+dotenv.config();
 
-const PORT = 3000;
-const GROQ_API_KEY = "YOUR_GROQ_API_KEY_HERE"; // আপনার Groq API Key দিন
+const PORT = process.env.PORT || 5000;
+const GROQ_API_KEY = process.env.GORK_ACTUAL_KEY;
 
 // Helper function to render HTML page with response
 function renderHTML(res, resultText) {
